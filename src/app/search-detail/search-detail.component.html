@@ -1,7 +1,16 @@
 <div class="container">
-    <ul>
-        <li>
-            <p>{{ itemDetail.title }}</p>
-        </li>
-    </ul>
+  <div class="row">
+    <div class="col-md-6 m-auto mt-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ itemDetail.title }}</h5>
+          <h6 class="card-subtitle text-muted"><span class="text-primary">$ {{ itemDetail.price }}</span></h6>
+        </div>
+        <img src="{{ itemDetail.image }}" alt="">
+        <div class="card-body">
+          <p class="card-text">{{ itemDetail.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
