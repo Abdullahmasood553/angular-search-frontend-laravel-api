@@ -1,14 +1,15 @@
-
 <div class="container">
-  <h1>Tods Listing</h1>
-  <input (input)="getProductsSearch($event)">
-  <ul>
-    <li *ngFor="let result of lis; let i = index">
-        {{ result.title }}
-    </li>
-  </ul>
-</div> 
-
-
-
-
+  <div class="row">
+    <div class="col-md-6 m-auto mt-4">
+      <div class="form-group">
+        <input type="text" (input)="getProductsSearch($event)" class="form-control form-control-lg"  placeholder="Search Product">
+      </div>
+      <div *ngFor="let result of lis; let i = index">
+        <div class="card card-body mb-1">
+          <h4>{{ result.title }}</h4>
+          <small class="text-primary">{{ result.description }}</small>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

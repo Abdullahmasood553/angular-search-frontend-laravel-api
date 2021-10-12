@@ -29,9 +29,7 @@ import {
         }, err => {
           console.log(err);
         });
-      });
-      
+      }); 
       return response;
     }
-
    }
