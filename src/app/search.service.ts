@@ -14,7 +14,7 @@ import {
   @Injectable({
     providedIn: 'root'
   })
-  export class ItemDetailService {
+  export class ProductSearchService {
 
      apiUrl = 'http://127.0.0.1:8000/api';
   
