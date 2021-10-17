@@ -1,30 +1,18 @@
-import {
-    Injectable
-  } from '@angular/core';
-  import {
-    HttpClient
-  } from '@angular/common/http';
-
-  import {
-    ApiService
-  } from './services/api.service';
-  
-  
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
   
   @Injectable({
     providedIn: 'root'
   })
   export class ProductSearchService {
-
-     apiUrl = 'http://127.0.0.1:8000/api';
   
-    
-      constructor(private http: HttpClient, private apiService: ApiService) { }
+  constructor(private http: HttpClient) { }
   
     // Get Product By Filter Name
     getFilterProductName(name: string) {
       const response = new Promise(resolve => {
-        this.http.get(this.apiUrl + `/products/backend?search_by_name=${name}`).subscribe(data => {          
+        this.http.get(environment.apiUrl + `/products/search_product?search_by_name=${name}`).subscribe(data => {          
           resolve(data);
         }, err => {
           console.log(err);
@@ -32,4 +20,4 @@ import {
       }); 
       return response;
     }
-   }
+ }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductSearchService } from './search.service';
-import { ApiService } from './services/api.service';
+import { DataService } from './services/data.service';
 import {
   Router,
   NavigationExtras
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
   constructor(
     private productSearchService: ProductSearchService,
     private router: Router,
-    private http: ApiService) {
+    private http: DataService) {
     this.data = new Array<any>();    
   }
 

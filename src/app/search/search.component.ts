@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductSearchService } from '../search.service';
-import { ApiService } from '../services/api.service';
-import {
-  Router,
-  NavigationExtras
-} from '@angular/router';
+import { DataService } from '../services/data.service';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -18,21 +15,18 @@ export class SearchComponent implements OnInit {
   constructor(
     private productSearchService: ProductSearchService,
     private router: Router,
-    private http: ApiService) {
+    private http: DataService) {
     this.data = new Array<any>();    
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 
   getProductsSearch(name: any) {
-    
     const keyword = name.target.value;
       const search = this.productSearchService.getFilterProductName(keyword)
-          .then(response => {
-            this.lis = response;
-          });
+        .then(response => {
+          this.lis = response;
+       });
   }
 
   
@@ -45,5 +39,4 @@ export class SearchComponent implements OnInit {
     };
     this.router.navigate(['search'], navigationExtras);
   }
-
 }
