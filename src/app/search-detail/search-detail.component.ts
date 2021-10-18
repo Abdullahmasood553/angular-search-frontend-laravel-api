@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductSearchService } from '../search.service';
+import { DataService } from '../services/data.service';
+
 
 @Component({
   selector: 'app-search-detail',
@@ -12,7 +13,7 @@ export class SearchDetailComponent implements OnInit {
   item_details: any;
   constructor(
     private route: ActivatedRoute,
-    private productSearchService: ProductSearchService
+    private dataService: DataService
   ) {
     this.route.queryParams.subscribe((response) => {
       if (response) {
@@ -22,8 +23,6 @@ export class SearchDetailComponent implements OnInit {
       }
     });
   }
-
   ngOnInit(): void { }
-
 
 }
